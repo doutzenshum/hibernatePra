@@ -1,11 +1,14 @@
 package com.bean;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
  * Created by 73963 on 2017/4/24.
  */
 @Entity
+@Table(name = "address")
 public class Address {
     private int id;
     private String province;
