@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HibernateModule/HibernateModule.iml" filepath="$PROJECT_DIR$/HibernateModule/HibernateModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/o2opk/o2opk.iml" filepath="$PROJECT_DIR$/o2opk/o2opk.iml" />
+    </modules>
+  </component>
+</project>

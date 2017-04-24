@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="hibernate-configuration" type="hibernate-configurationType"/>
+  <xs:complexType name="session-factoryType">
+    <xs:sequence>
+      <xs:element type="propertyType" name="property" maxOccurs="unbounded" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>hibernate中session对象的管理模式  hibernate中sql语句的设置（是否在控制台输出SQL语句）  DB schema will be updated if needed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="mappingType" name="mapping" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="propertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="mappingType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="class" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="hibernate-configurationType">
+    <xs:sequence>
+      <xs:element type="session-factoryType" name="session-factory"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

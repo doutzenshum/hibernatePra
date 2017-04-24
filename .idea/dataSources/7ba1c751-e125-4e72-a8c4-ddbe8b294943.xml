@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db5">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="communitysport"/>
+    <schema id="4" parent="1" name="db"/>
+    <schema id="5" parent="1" name="db2"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="internet"/>
+    <schema id="8" parent="1" name="ixuguang"/>
+    <schema id="9" parent="1" name="javaweb"/>
+    <schema id="10" parent="1" name="mysql"/>
+    <schema id="11" parent="1" name="olchat"/>
+    <schema id="12" parent="1" name="pagedb"/>
+    <schema id="13" parent="1" name="performance_schema"/>
+    <schema id="14" parent="1" name="sakila"/>
+    <schema id="15" parent="1" name="shuxin2"/>
+    <schema id="16" parent="1" name="student management"/>
+    <schema id="17" parent="1" name="sys"/>
+    <schema id="18" parent="1" name="vip"/>
+    <schema id="19" parent="1" name="world"/>
+    <table id="20" parent="2" name="address"/>
+    <table id="21" parent="2" name="customer"/>
+    <table id="22" parent="2" name="person"/>
+    <table id="23" parent="2" name="student"/>
+    <table id="24" parent="2" name="student23"/>
+    <table id="25" parent="2" name="tb5"/>
+    <table id="26" parent="2" name="tb6"/>
+    <column id="27" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="20" name="province">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="29" parent="20" name="city">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="30" parent="20" name="postcode">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="31" parent="20" name="detail">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="32" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="35" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="22" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="38" parent="22" name="heigth">
+      <Position>3</Position>
+      <DataType>varchar(4)|0</DataType>
+    </column>
+    <column id="39" parent="22" name="sex">
+      <Position>4</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <key id="40" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="23" name="className">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="43" parent="23" name="person_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="23" name="UK_9gt75d8aqofv7f3jb7u1phvxs">
+      <ColNames>person_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="46" parent="23" name="UK_9gt75d8aqofv7f3jb7u1phvxs">
+      <ColNames>person_id</ColNames>
+      <UnderlyingIndexName>UK_9gt75d8aqofv7f3jb7u1phvxs</UnderlyingIndexName>
+    </key>
+    <foreign-key id="47" parent="23" name="FK3bkmp4kohbl54m14tb2fcqya3">
+      <ColNames>id</ColNames>
+      <RefSchemaName>db5</RefSchemaName>
+      <RefTableName>person</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="48" parent="23" name="FKbf0gv0b0p2la1hesuy7ito9nr">
+      <ColNames>id</ColNames>
+      <RefSchemaName>db5</RefSchemaName>
+      <RefTableName>person</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="49" parent="24" name="sno">
+      <Position>1</Position>
+      <DataType>char(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="24" name="sname">
+      <Position>2</Position>
+      <DataType>char(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="24" name="ssex">
+      <Position>3</Position>
+      <DataType>enum(&apos;0&apos;, &apos;1&apos;)|0</DataType>
+    </column>
+    <column id="52" parent="24" name="sage">
+      <Position>4</Position>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+    <column id="53" parent="24" name="sdept">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="54" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="25" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="57" parent="25" name="sex">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="58" parent="25" name="age">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="59" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="26" name="tid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="62" parent="26" name="tid">
+      <ColNames>tid</ColNames>
+    </index>
+    <key id="63" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="26" name="tb6_ibfk_1">
+      <ColNames>tid</ColNames>
+      <RefSchemaName>db5</RefSchemaName>
+      <RefTableName>tb5</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

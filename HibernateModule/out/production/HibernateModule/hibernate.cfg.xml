@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db5</property>
+        <property name="connection.password">root</property>
+        <property name="connection.username">root</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!-- hibernate中session对象的管理模式 -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- hibernate中sql语句的设置（是否在控制台输出SQL语句） -->
+        <property name="show_sql">true</property>
+
+        <!-- DB schema will be updated if needed -->
+         <property name="hbm2ddl.auto">update</property>
+        <mapping class="com.bean.Person"/>
+        <mapping class="com.bean.Student"/>
+    </session-factory>
+</hibernate-configuration>
