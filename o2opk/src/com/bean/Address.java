@@ -29,6 +29,7 @@ public class Address {
 
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -78,7 +79,7 @@ public class Address {
     }
 
     @OneToOne
-    @PrimaryKeyJoinColumn
+//    @PrimaryKeyJoinColumn
     public Customer getCustomer() {
         return customer;
     }

@@ -55,29 +55,47 @@ public class test {
         Customer customer = new Customer("123");
         address.setCustomer(customer);
         customer.setAddress(address);
-        session.save(address);
         session.save(customer);
+        session.save(address);
         session.getTransaction().commit();
         session.close();
     }
 
-    public static void testShemaExport() {
+    private static void insert2() {
         Configuration configiguration = new Configuration().configure();
-//        StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure().build();
-//        Metadata metadata = new MetadataSources(standardRegistry).getMetadataBuilder().applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE).build();
-//        sessionFactory = metadata.getSessionFactoryBuilder().build();
-
+        StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure().build();
+        Metadata metadata = new MetadataSources(standardRegistry).getMetadataBuilder().applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE).build();
+        sessionFactory = metadata.getSessionFactoryBuilder().build();
         session = sessionFactory.openSession();
         transaction = session.beginTransaction();
+        session.beginTransaction();
+//        Address address = new Address("123", "123", "123", "123");
+//        Customer customer = new Customer("123");
+        Address address1 = new Address("1234", "123", "123", "123");
+        Customer customer1= new Customer("1234");
+//        Address address2 = new Address("12345", "123", "123", "123");
+//        Customer customer2 = new Customer("12345");
+        address1.setCustomer(customer1);
+        customer1.setAddress(address1);
+        session.save(address1);
+        session.save(customer1);
+        session.getTransaction().commit();
+        session.close();
+    }
 
-          ServiceRegistry serviceRegistry=new StandardServiceRegistryBuilder().configure().build();
-          Metadata metadata=new MetadataSources(serviceRegistry).buildMetadata();
-          SchemaExport schemaExport = new SchemaExport();
-          schemaExport.create(EnumSet.of(TargetType.DATABASE),metadata);
+
+    public static void testShemaExport() {
+
+
+        ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
+        Metadata metadata = new MetadataSources(serviceRegistry).buildMetadata();
+        SchemaExport schemaExport = new SchemaExport();
+        schemaExport.create(EnumSet.of(TargetType.DATABASE), metadata);
     }
 
     public static void main(final String[] args) throws Exception {
-//        insert();
-        testShemaExport();
+        insert();
+//        insert2();
+//        testShemaExport();
     }
 }

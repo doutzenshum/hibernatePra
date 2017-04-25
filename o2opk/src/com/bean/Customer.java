@@ -1,6 +1,12 @@
 package com.bean;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.Parameter;
+
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
@@ -20,8 +26,15 @@ public class Customer implements Serializable{
         this.name = name;
     }
 
+//    @Id
+//    @Column(name = "id", nullable = false)
+//    @TableGenerator(name="GEN_INDEX")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "GEN_INDEX")
+
     @Id
-    @Column(name = "id", nullable = false)
+//    @GenericGenerator(name="pkGenerator",strategy="foreign", parameters = { @Parameter(name = "property", value = "customer") })
+//    @GeneratedValue(generator="pkGenerator")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -40,7 +53,7 @@ public class Customer implements Serializable{
         this.name = name;
     }
 
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(cascade = {CascadeType.ALL},mappedBy = "customer")
     @PrimaryKeyJoinColumn
     public Address getAddress() {
         return address;
